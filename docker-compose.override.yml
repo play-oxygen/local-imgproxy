@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+
+  imgproxy:
+    image: dev_imgproxy:local
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.dev
+    env_file:
+      - ./docker/dev.env
+    ports:
+      - "4007:4007"
+    volumes:
+      - ./image_bucket:/image_bucket
+    stdin_open: true
+    tty: true

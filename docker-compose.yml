@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+
+  imgproxy:
+    image: dev_imgproxy:local
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.prod
+    env_file:
+      - ./docker/prod.env
